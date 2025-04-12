@@ -109,36 +109,18 @@ Btracking->ptr=NULL;
 
 delete tempp;
 tail=Btracking;
-//     if(tail==NULL||Btracking==NULL){
-//         cout<<"this is again empty "<<endl;ka
-//         return;
-//     }
-//     node* deadd2=tail;
-// tail=Btracking->ptr;
-// tail->ptr=NULL;
 
-//     cout<<"Btracking : "<<Btracking->val<<endl;
-//     // tail=gg
-// delete deadd2;
-// if(head==NULL){
-//     return;
-// }
-// if(head==tail){
-//     delete head;
-//     head=tail=NULL;
-//     return;
-// }
-// node* tempp=head;
-// while(tempp->ptr!=tail){
-//     tempp=tempp->ptr;
-// }
-// tempp->ptr=NULL;
-// delete tail;
-// tail=tempp;
 }
 
 void insert(int val,int pl){
-    if(pl<=size){
+
+    if(pl==0){
+node* newnode=new node(val);  
+newnode->ptr=head;
+head=newnode;
+    }
+
+    else if(pl<=size){
 int i=0;
 node* newnode=new node(val);  
 node* trv=head;
@@ -155,8 +137,24 @@ newnode->ptr=next;
 
 }
 
-
-
+void search(int valu){
+int idx=0;
+node* temp=head;
+while(idx<=size){
+    if(temp->val==valu){
+        break;
+    }
+    temp=temp->ptr;
+    idx++;
+}
+// cout<<" SIZE : "<<size<<endl;
+if(idx<=size){
+cout<<" IDX : "<<idx<<endl;
+}
+else{
+    cout<<" NOT FOUND "<<endl;
+}
+}
 void print(void){
     if(head==NULL){
         cout<<"this is emty "<<endl;
@@ -180,6 +178,22 @@ void printback(void){
     }    
     cout<<reverse->val<<endl;
 }    
+
+
+// void insert(int val,int pos){
+// int i=0;
+// node* newnode=new node(val);
+// node* temp=head;
+// while (i<=pos)
+// {
+    
+// temp=temp->ptr;
+// i++;
+// }
+// cout<<"insert"<<temp->val<<endl;
+
+// }
+
 
 };
 
@@ -225,15 +239,15 @@ obj.print();  // Should print nothing
 
     // return 0;
 
-// obj.push_front(5);
-// obj.push_front(6);
-// obj.push_front(7);
-// obj.push_back(8);
-// obj.push_back(9);
-// obj.insert(22,6);
-// obj.print();  // Output: 7 6 5 8 9
-
-// obj.pop_front();
+obj.push_front(5);
+obj.push_front(6);
+obj.push_front(7);
+obj.push_back(8);
+obj.push_back(9);
+obj.insert(22,5);
+obj.print();  // Output: 7 6 5 8 9
+obj.search(0);
+// obj.pop_f;ront();
 // obj.pop_front();
 // obj.pop_front();
 // obj.pop_front();
