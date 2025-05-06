@@ -180,21 +180,6 @@ void printback(void){
 }    
 
 
-// void insert(int val,int pos){
-// int i=0;
-// node* newnode=new node(val);
-// node* temp=head;
-// while (i<=pos)
-// {
-    
-// temp=temp->ptr;
-// i++;
-// }
-// cout<<"insert"<<temp->val<<endl;
-
-// }
-
-
 };
 
 int main(){
